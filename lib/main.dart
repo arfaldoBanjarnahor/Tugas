@@ -61,7 +61,7 @@ class _NavbarPageState extends State<NavbarPage> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed, 
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -71,9 +71,21 @@ class _NavbarPageState extends State<NavbarPage> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.create),
-            label: 'Creat',
-          ),
+                icon: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      colors: [Colors.blue, Colors.lightBlue],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  child: const Icon(Icons.add, color: Colors.white, size: 28),
+                ),
+                label: 'Create',
+               ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favorite', 
